@@ -92,6 +92,46 @@ const toursData = {
       "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
     ],
   },
+  'can-tho': {
+    name: 'Cần Thơ',
+    images: [
+      'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
+      'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+      'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+    ],
+    location: 'Cần Thơ',
+    duration: '2 ngày 1 đêm',
+    price: '2,500,000đ',
+    rating: 4.6,
+    description: "Cần Thơ là điểm đến văn hóa nổi tiếng với sông nước, chợ nổi và ẩm thực phong phú. Tour này mang đến trải nghiệm thăm quan các điểm du lịch nổi tiếng, thưởng thức ẩm thực địa phương và thăm chợ nổi Cái Răng sôi động. Đi cùng với phương tiện di chuyển thoải mái và chỗ ở tiện nghi, tour Cần Thơ sẽ làm hài lòng mọi du khách.",
+    highlights: [
+      "Thăm chợ nổi Cái Răng sôi động",
+      "Tour tham quan vườn trái cây Cần Thơ",
+      "Thăm quan nhà cổ Bình Thủy cổ kính",
+      "Thưởng thức ẩm thực địa phương ngon miệng",
+      "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
+    ],
+  },
+  'tay-ninh': {
+    name: 'Tây Ninh',
+    images: [
+      'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+      'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
+      'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+    ],
+    location: 'Tây Ninh',
+    duration: '2 ngày 1 đêm',
+    price: '2,000,000đ',
+    rating: 4.5,
+    description: "Tây Ninh là điểm đến tâm linh nổi tiếng với đền Cao Đài và nhịp sống văn hóa độc đáo. Tour này mang đến trải nghiệm thăm quan các điểm du lịch tâm linh, tham gia lễ hội và thưởng thức ẩm thực địa phương. Đi cùng với phương tiện di chuyển thoải mái và chỗ ở tiện nghi, tour Tây Ninh sẽ làm hài lòng mọi du khách.",
+    highlights: [
+      "Thăm đền Cao Đài tâm linh",
+      "Tham gia lễ hội truyền thống",
+      "Thăm chùa Bà Đen linh thiêng",
+      "Thưởng thức ẩm thực địa phương ngon miệng",
+      "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
+    ],
+  },
 };
 
 const TourDetail = () => {
