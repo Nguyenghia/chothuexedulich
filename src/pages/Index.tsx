@@ -77,14 +77,14 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className={`space-y-6 ${isLoaded ? 'animate-slide-up' : ''}`}>
               <div className="inline-block bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">
-                Explore Vietnam with Comfort
+                Khám phá Việt Nam một cách thoải mái
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Journey Beyond <br />
-                <span className="text-primary">Ordinary Travel</span>
+                Hành Trình Vượt Xa <br />
+                <span className="text-primary">Du lịch giá rẻ</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md">
-                Premium tour packages and car rental services tailored to create unforgettable travel experiences throughout Vietnam.
+                Các gói tour du lịch cao cấp và dịch vụ cho thuê xe được thiết kế riêng để tạo nên những trải nghiệm du lịch khó quên trên khắp Việt Nam.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button 
