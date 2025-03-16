@@ -21,7 +21,7 @@ const Tours = () => {
     {
       id: 'vung-tau',
       name: 'Vũng Tàu',
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
+      image: 'https://images.pexels.com/photos/25852230/pexels-photo-25852230/free-photo-of-bi-n-binh-minh-hoang-hon-d-i-d-ng.jpeg?auto=compress&cs=tinysrgb&w=600',
       location: 'Vũng Tàu',
       duration: '2 ngày 1 đêm',
       price: '3,000,000đ',
@@ -31,7 +31,7 @@ const Tours = () => {
     {
       id: 'nha-trang',
       name: 'Nha Trang',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+      image: 'https://images.unsplash.com/photo-1533002832-1721d16b4bb9?q=80&w=1578&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       location: 'Nha Trang',
       duration: '3 ngày 2 đêm',
       price: '6,500,000đ',
@@ -41,7 +41,7 @@ const Tours = () => {
     {
       id: 'da-lat',
       name: 'Đà Lạt',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      image: 'https://images.unsplash.com/photo-1565859144920-27e9cddac505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fCVDNCU5MSVDMyVBMCUyMGwlRTElQkElQTF0fGVufDB8fDB8fHww',
       location: 'Đà Lạt',
       duration: '4 ngày 3 đêm',
       price: '7,000,000đ',
@@ -51,7 +51,7 @@ const Tours = () => {
     {
       id: 'can-tho',
       name: 'Cần Thơ',
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
+      image: 'https://images.pexels.com/photos/2134829/pexels-photo-2134829.jpeg?auto=compress&cs=tinysrgb&w=600',
       location: 'Cần Thơ',
       duration: '2 ngày 1 đêm',
       price: '2,500,000đ',
@@ -62,7 +62,7 @@ const Tours = () => {
     {
       id: 'tay-ninh',
       name: 'Tây Ninh',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+      image: 'https://images.pexels.com/photos/28797297/pexels-photo-28797297/free-photo-of-toa-thanh-tay-ninh.jpeg?auto=compress&cs=tinysrgb&w=600',
       location: 'Tây Ninh',
       duration: '2 ngày 1 đêm',
       price: '2,000,000đ',
@@ -72,7 +72,7 @@ const Tours = () => {
     {
       id: 'mui-ne',
       name: 'Mũi né',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      image: 'https://images.unsplash.com/photo-1716479852874-22742b84fef5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhhbiUyMHRoaSVFMSVCQSVCRnR8ZW58MHx8MHx8fDA%3D',
       location: 'Mũi Né',
       duration: '2 ngày 1 đêm',
       price: '2,500,000đ',

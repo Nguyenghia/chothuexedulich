@@ -20,7 +20,7 @@ const HomePage = () => {
     {
       id: 'vung-tau',
       name: 'Vũng Tàu',
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
+      image: 'https://images.pexels.com/photos/25852230/pexels-photo-25852230/free-photo-of-bi-n-binh-minh-hoang-hon-d-i-d-ng.jpeg?auto=compress&cs=tinysrgb&w=600',
       location: 'Vũng Tàu',
       duration: '2 ngày 1 đêm',
       price: '3,000,000 VND',
@@ -29,7 +29,7 @@ const HomePage = () => {
     {
       id: 'nha-trang',
       name: 'Nha Trang ',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+      image: 'https://images.unsplash.com/photo-1533002832-1721d16b4bb9?q=80&w=1578&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       location: 'Nha Trang',
       duration: '3 ngày 2 đêm',
       price: '6,500,000 VND',
@@ -38,7 +38,7 @@ const HomePage = () => {
     {
       id: 'da-lat',
       name: 'Đà Lạt',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      image: 'https://images.unsplash.com/photo-1626608017817-211d7c48177d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       location: 'Đà Lạt',
       duration: '4 ngày 3 đêm',
       price: '7,000,000 VND',
@@ -50,19 +50,19 @@ const HomePage = () => {
     {
       name: 'Xe 4 chỗ',
       description: 'Xe 4 chỗ nhỏ gọn, lý tưởng cho việc di chuyển trong thành phố',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+      image: 'https://static.wixstatic.com/media/b4dcef_6264737c43814c71898de6bbe29f2903~mv2.png/v1/crop/x_55,y_0,w_1256,h_608/fill/w_560,h_292,al_c,q_95,enc_avif,quality_auto/vios-2021-92aa.png',
       price: 'From $25/day'
     },
     {
       name: 'Xe 7 chỗ',
       description: 'Xe SUV 7 chỗ rộng rãi cho chuyến đi của gia đình',
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+      image: 'https://toyotanamdinh5s.com/wp-content/uploads/2023/11/toyota-innova-zenix-indonesia-17s-6621-1669105185498-16691051887792036977523-1.webp',
       price: 'From $45/day'
     },
     {
       name: 'Xe 16 chỗ',
       description: 'Xe ô tô sang trọng 16 chỗ ngồi cho du lịch theo nhóm',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+      image: 'https://saigonford.com.vn/public/upload/images/hinhsanpham/ford-transit-3691720175240.png',
       price: 'From $80/day'
     },
   ];
@@ -110,7 +110,7 @@ const HomePage = () => {
             <div className={`relative ${isLoaded ? 'animate-fade-in' : ''}`}>
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
+                  src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Scenic Vietnam landscape" 
                   className="w-full h-[400px] object-cover"
                 />
@@ -285,7 +285,7 @@ const HomePage = () => {
               </div>
               <div className="relative h-64 lg:h-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" 
+                  src="https://images.pexels.com/photos/31150309/pexels-photo-31150309/free-photo-of-di-b-bu-i-sang.jpeg?auto=compress&cs=tinysrgb&w=600" 
                   alt="Scenic Vietnam landscape" 
                   className="w-full h-full object-cover"
                 />

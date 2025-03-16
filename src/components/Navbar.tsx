@@ -42,7 +42,7 @@ const Navbar = () => {
             to="/"
             className="text-2xl md:text-3xl font-bold text-primary transition-all"
           >
-            TravelWheels
+            Thuê xe du lịch 
           </Link>
 
           {/* Desktop Navigation */}

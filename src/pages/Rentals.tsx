@@ -27,7 +27,7 @@ const Rentals = () => {
         {
           id: 'econ-1',
           name: 'Toyota Vios',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://static.wixstatic.com/media/b4dcef_6264737c43814c71898de6bbe29f2903~mv2.png/v1/crop/x_55,y_0,w_1256,h_608/fill/w_560,h_292,al_c,q_95,enc_avif,quality_auto/vios-2021-92aa.png',
           seats: 4,
           features: ['Air conditioning', 'Bluetooth audio', 'Fuel efficient'],
           price: '$25/day',
@@ -35,7 +35,7 @@ const Rentals = () => {
         {
           id: 'econ-2',
           name: 'Honda City',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://images2.thanhnien.vn/528068263637045248/2024/3/23/honda-city-2024-1-ad16-171116521478291114749.png',
           seats: 4,
           features: ['Air conditioning', 'USB charging', 'Navigation system'],
           price: '$28/day',
@@ -50,15 +50,16 @@ const Rentals = () => {
         {
           id: 'fam-1',
           name: 'Toyota Innova',
-          image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+          image: 'https://toyotanamdinh5s.com/wp-content/uploads/2023/11/toyota-innova-zenix-indonesia-17s-6621-1669105185498-16691051887792036977523-1.webp',
+          
           seats: 7,
           features: ['Air conditioning', 'Spacious trunk', 'Entertainment system'],
           price: '$45/day',
         },
         {
           id: 'fam-2',
-          name: 'Honda CR-V',
-          image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+          name: 'Ford Everest',
+          image: 'https://saigonford.com.vn/public/upload/images/hinhsanpham/ford-everest-the-he-moi-51851668670080.png',
           seats: 7,
           features: ['Air conditioning', 'USB charging', 'Roof rack'],
           price: '$50/day',
@@ -73,7 +74,7 @@ const Rentals = () => {
         {
           id: 'prem-1',
           name: 'Huyndai Solati',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://hyundaitphcm.com.vn/wp-content/uploads/2021/11/solati.jpg',
           seats: 16,
           features: ['Air conditioning', 'Comfortable seating', 'Large luggage space'],
           price: '$80/day',
@@ -81,7 +82,7 @@ const Rentals = () => {
         {
           id: 'prem-2',
           name: 'Ford Transit',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://saigonford.com.vn/public/upload/images/hinhsanpham/ford-transit-3691720175240.png',
           seats: 16,
           features: ['Air conditioning', 'Entertainment system', 'Spacious interior'],
           price: '$85/day',
@@ -96,7 +97,7 @@ const Rentals = () => {
         {
           id: 'bus-1',
           name: 'Xe 29 chỗ',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://thacohcm.com/wp-content/uploads/2023/05/EVERGREEN87S_1-scaled.jpg',
           seats: 29,
           features: ['Air conditioning', 'Comfortable seating', 'Onboard entertainment'],
           price: '$120/day',
@@ -104,7 +105,7 @@ const Rentals = () => {
         {
           id: 'bus-2',
           name: 'Xe 45 chỗ',
-          image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+          image: 'https://thuexelimousines.com.vn/wp-content/uploads/2024/05/Hyundai-Universe-45-cho.jpg',
           seats: 45,
           features: ['Air conditioning', 'Reclining seats', 'Onboard restroom'],
           price: '$180/day',
@@ -125,13 +126,13 @@ const Rentals = () => {
       ]
     },
     {
-      title: "Dịch Vụ Hướng Dẫn Viên",
-      description: "Hướng dẫn viên chuyên nghiệp sẽ hỗ trợ bạn khám phá những điểm đến tuyệt vời nhất của Việt Nam.",
+      title: "Dịch Vụ Trọn Gói Xe Cưới",
+      description: "Dịch vụ xe cưới chuyên nghiệp với nhiều lựa chọn xe đẹp, phục vụ chu đáo và giá cả hợp lý.",
       features: [
-        "Hướng dẫn viên nhiều kinh nghiệm",
-        "Chương trình tham quan linh hoạt",
-        "Hỗ trợ đặt chỗ khách sạn",
-        "Hỗ trợ đặt vé tham quan",
+        "Xe cưới đẹp",
+        "Lái xe chuyên nghiệp",
+        "Hỗ trợ trang trí xe",
+        "Hỗ trợ chụp ảnh",
       ]
     },
     {

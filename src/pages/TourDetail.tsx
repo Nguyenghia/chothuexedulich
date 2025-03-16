@@ -15,9 +15,9 @@ const toursData = {
   'vung-tau': {
     name: 'Vũng Tàu',
     images: [
-      'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
-      'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      'https://media.istockphoto.com/id/1864669952/vi/anh/nh%C3%ACn-t%E1%BB%AB-tr%C3%AAn-kh%C3%B4ng-th%C3%A0nh-ph%E1%BB%91-v%C5%A9ng-t%C3%A0u-vi%E1%BB%87t-nam-to%C3%A0n-c%E1%BA%A3nh-th%C3%A0nh-ph%E1%BB%91-bi%E1%BB%83n-y%C3%AAn-b%C3%ACnh-v%C3%A0-xinh-%C4%91%E1%BA%B9p.jpg?s=612x612&w=0&k=20&c=cLH08PwHVeTsH6g2WP8pWY-sm9OhBDUDWT_9_6ceH0o=',
+      'https://media.istockphoto.com/id/1858701564/vi/anh/th%C3%A0nh-ph%E1%BB%91-v%C3%A0-b%E1%BB%9D-bi%E1%BB%83n-v%C5%A9ng-t%C3%A0u-vi%E1%BB%87t-nam.jpg?s=612x612&w=0&k=20&c=vHpjAwDC8schol6rWByz2UcmCbEqNP_TOjylRyimQJQ=',
+      'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQvL8rp8-JFaWvTwhXGdJtGq8sVqlkK0xtn9gleiTjvxXNLp2gUAWVp_fV7kB2A5lJVEMqMpmBwztoIAip4FYblN1878LFkEJiC_4vmttA',
     ],
     location: 'Vũng Tàu',
     duration: '2 ngày 1 đêm',
@@ -35,9 +35,9 @@ const toursData = {
   'nha-trang': {
     name: 'Nha Trang ',
     images: [
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
-      'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
-      'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      'https://images.unsplash.com/photo-1617857995575-d102f16fd3e7?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1533002832-1721d16b4bb9?q=80&w=1578&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1527241868-2a14a600b05c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ],
     location: 'Nha Trang',
     duration: '3 ngày 2 đêm',
@@ -55,7 +55,7 @@ const toursData = {
   'da-lat': {
     name: 'Đà Lạt',
     images: [
-      'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+      'https://images.unsplash.com/photo-1626608017817-211d7c48177d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb',
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
     ],
