@@ -151,8 +151,8 @@ const TourDetail = () => {
         <Navbar />
         <div className="flex-grow flex items-center justify-center p-6">
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Tour Not Found</h2>
-            <p className="text-muted-foreground mb-6">The tour you're looking for doesn't exist or has been removed.</p>
+            <h2 className="text-2xl font-bold mb-4">Tour không tìm thấy</h2>
+            <p className="text-muted-foreground mb-6">Chuyến tham quan bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.</p>
             <Button asChild>
               <Link to="/tours">Browse All Tours</Link>
             </Button>
