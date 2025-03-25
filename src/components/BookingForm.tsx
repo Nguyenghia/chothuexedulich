@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Calendar } from '@/components/ui/calendar';
@@ -8,8 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { CalendarIcon, X } from 'lucide-react';
-import { format } from 'date-fns';
+import { CalendarIcon, X, Clock } from 'lucide-react';
+import { format, isBefore, startOfDay, isAfter } from 'date-fns';
 import { cn } from '@/lib/utils';
 import emailjs from 'emailjs-com';
 
@@ -31,7 +30,9 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
     phone: '',
     address: '',
     departureDate: null as Date | null,
+    departureTime: '08:00',
     returnDate: null as Date | null,
+    returnTime: '17:00',
     adults: 1,
     children: 0,
     carType: '4',
@@ -46,12 +47,37 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
 
   const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const numValue = parseInt(value) || 0;
+    // Chỉ cho phép nhập số
+    const numValue = value.replace(/[^0-9]/g, '');
     setFormData(prev => ({ ...prev, [name]: numValue }));
   };
 
   const handleDateSelect = (date: Date | null, field: 'departureDate' | 'returnDate') => {
+    if (!date) {
+      setFormData(prev => ({ ...prev, [field]: null }));
+      return;
+    }
+
+    // Kiểm tra ngày có phải là ngày trong quá khứ không
+    if (isBefore(startOfDay(date), startOfDay(new Date()))) {
+      toast.error('Không thể chọn ngày trong quá khứ');
+      return;
+    }
+
+    // Nếu là ngày trở về, kiểm tra phải sau ngày khởi hành
+    if (field === 'returnDate' && formData.departureDate) {
+      if (!isAfter(date, formData.departureDate)) {
+        toast.error('Ngày trở về phải sau ngày khởi hành');
+        return;
+      }
+    }
+
     setFormData(prev => ({ ...prev, [field]: date }));
+  };
+
+  const formatDate = (date: Date | null) => {
+    if (!date) return '';
+    return format(date, 'dd-MM-yyyy');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -59,7 +85,19 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
     
     // Validate form
     if (!formData.name || !formData.phone || !formData.address || !formData.departureDate || !formData.returnDate) {
-      toast.error('Please fill in all required fields');
+      toast.error('Vui lòng điền đầy đủ thông tin');
+      return;
+    }
+
+    // Validate phone number
+    if (!/^[0-9]{10}$/.test(formData.phone)) {
+      toast.error('Số điện thoại phải có 10 chữ số');
+      return;
+    }
+
+    // Validate dates
+    if (!isAfter(formData.returnDate, formData.departureDate)) {
+      toast.error('Ngày trở về phải sau ngày khởi hành');
       return;
     }
 
@@ -72,8 +110,10 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
       gender: formData.gender,
       phone: formData.phone,
       address: formData.address,
-      departure_date: formData.departureDate ? format(formData.departureDate, 'PPP') : '',
-      return_date: formData.returnDate ? format(formData.returnDate, 'PPP') : '',
+      departure_date: formatDate(formData.departureDate),
+      departure_time: formData.departureTime,
+      return_date: formatDate(formData.returnDate),
+      return_time: formData.returnTime,
       adults: formData.adults,
       children: formData.children,
       car_type: formData.carType,
@@ -96,7 +136,9 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
           phone: '',
           address: '',
           departureDate: null,
+          departureTime: '08:00',
           returnDate: null,
+          returnTime: '17:00',
           adults: 1,
           children: 0,
           carType: '4',
@@ -105,7 +147,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
       })
       .catch((error) => {
         console.error('Lỗi gửi email:', error);
-        toast.error('Có lỗi khi gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ trực tiếp với chúng tôi.');
+        toast.error('Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại sau.');
       })
       .finally(() => {
         setIsSubmitting(false);
@@ -115,177 +157,209 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
-      <div className="bg-white rounded-xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
-        <div className="p-6 bg-primary/5 border-b flex items-center justify-between">
-          <h3 className="text-xl font-semibold">
-            {tourName ? `Book Tour: ${tourName}` : 'Đặt Xe'}
-          </h3>
-          <button 
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 transition-colors"
-            aria-label="Close"
-          >
-            <X size={20} />
-          </button>
+    <div className={cn(
+      "fixed inset-0 bg-black/50 z-50 flex items-center justify-center",
+      isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+    )}>
+      <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-semibold">Đặt xe</h2>
+          <Button variant="ghost" size="icon" onClick={onClose}>
+            <X className="h-4 w-4" />
+          </Button>
         </div>
-        
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name Field */}
+          <div className="space-y-2">
+            <Label htmlFor="name">Họ và tên *</Label>
+            <Input
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Gender Field */}
+          <div className="space-y-2">
+            <Label>Giới tính *</Label>
+            <RadioGroup
+              name="gender"
+              value={formData.gender}
+              onValueChange={(value) => setFormData(prev => ({ ...prev, gender: value }))}
+              className="flex space-x-4"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="Nam" id="male" />
+                <Label htmlFor="male">Nam</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="Nữ" id="female" />
+                <Label htmlFor="female">Nữ</Label>
+              </div>
+            </RadioGroup>
+          </div>
+
+          {/* Phone Field */}
+          <div className="space-y-2">
+            <Label htmlFor="phone">Số điện thoại *</Label>
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              pattern="[0-9]*"
+              inputMode="numeric"
+              maxLength={10}
+              value={formData.phone}
+              onChange={handleNumberChange}
+              required
+              placeholder="Nhập số điện thoại"
+            />
+          </div>
+
+          {/* Address Field */}
+          <div className="space-y-2">
+            <Label htmlFor="address">Địa chỉ *</Label>
+            <Input
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Date and Time Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Họ và tên <span className="text-red-500">*</span></Label>
-              <Input 
-                id="name" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                placeholder="Điền tên của bạn"
-                required
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Giới tính <span className="text-red-500">*</span></Label>
-              <RadioGroup 
-                value={formData.gender}
-                onValueChange={(value) => setFormData(prev => ({ ...prev, gender: value }))}
-                className="flex space-x-6"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Nam" id="male" />
-                  <Label htmlFor="Nam">Nam</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Nữ" id="female" />
-                  <Label htmlFor="Nữ">Nữ</Label>
-                </div>
-              </RadioGroup>
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="phone">Số Điện Thoại <span className="text-red-500">*</span></Label>
-              <Input 
-                id="phone" 
-                name="phone" 
-                value={formData.phone} 
-                onChange={handleChange} 
-                placeholder="Điền số điện thoại của bạn"
-                required
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="address">Địa chỉ <span className="text-red-500">*</span></Label>
-              <Input 
-                id="address" 
-                name="address" 
-                value={formData.address} 
-                onChange={handleChange} 
-                placeholder="Điền địa chỉ của bạn"
-                required
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Ngày đi <span className="text-red-500">*</span></Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal",
-                      !formData.departureDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {formData.departureDate ? format(formData.departureDate, "PPP") : "Select departure date"}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar
-                    mode="single"
-                    selected={formData.departureDate || undefined}
-                    onSelect={(date) => handleDateSelect(date, 'departureDate')}
-                    initialFocus
-                    disabled={(date) => date < new Date()}
+              <Label>Ngày khởi hành *</Label>
+              <div className="flex gap-2">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal",
+                        !formData.departureDate && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {formData.departureDate ? formatDate(formData.departureDate) : "Chọn ngày"}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={formData.departureDate}
+                      onSelect={(date) => handleDateSelect(date, 'departureDate')}
+                      initialFocus
+                      disabled={(date) => isBefore(startOfDay(date), startOfDay(new Date()))}
+                      fromDate={new Date()}
+                    />
+                  </PopoverContent>
+                </Popover>
+                <div className="relative">
+                  <Input
+                    type="time"
+                    value={formData.departureTime}
+                    onChange={(e) => setFormData(prev => ({ ...prev, departureTime: e.target.value }))}
+                    className="w-[120px]"
                   />
-                </PopoverContent>
-              </Popover>
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Ngày về <span className="text-red-500">*</span></Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal",
-                      !formData.returnDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {formData.returnDate ? format(formData.returnDate, "PPP") : "Select return date"}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar
-                    mode="single"
-                    selected={formData.returnDate || undefined}
-                    onSelect={(date) => handleDateSelect(date, 'returnDate')}
-                    initialFocus
-                    disabled={(date) => date < (formData.departureDate || new Date())}
-                  />
-                </PopoverContent>
-              </Popover>
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Số lượng hành khách</Label>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="adults" className="text-sm text-muted-foreground">Người lớn</Label>
-                  <Input 
-                    id="adults" 
-                    name="adults" 
-                    type="number" 
-                    min="1"
-                    value={formData.adults} 
-                    onChange={handleNumberChange}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="children" className="text-sm text-muted-foreground">Trẻ em</Label>
-                  <Input 
-                    id="children" 
-                    name="children" 
-                    type="number"
-                    min="0" 
-                    value={formData.children} 
-                    onChange={handleNumberChange}
-                  />
+                  <Clock className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-2">
-              <Label htmlFor="carType">Loại xe</Label>
-              <select
-                id="carType"
-                name="carType"
-                value={formData.carType}
-                onChange={handleChange}
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                <option value="4">4 chỗ</option>
-                <option value="7">7 chỗ</option>
-                <option value="16">16 chỗ</option>
-                <option value="29">29 chỗ</option>
-                <option value="45">45 chỗ</option>
-              </select>
+              <Label>Ngày trở về *</Label>
+              <div className="flex gap-2">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal",
+                        !formData.returnDate && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {formData.returnDate ? formatDate(formData.returnDate) : "Chọn ngày"}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={formData.returnDate}
+                      onSelect={(date) => handleDateSelect(date, 'returnDate')}
+                      initialFocus
+                      disabled={(date) => 
+                        isBefore(startOfDay(date), startOfDay(new Date())) || 
+                        (formData.departureDate && !isAfter(date, formData.departureDate))
+                      }
+                      fromDate={formData.departureDate || new Date()}
+                    />
+                  </PopoverContent>
+                </Popover>
+                <div className="relative">
+                  <Input
+                    type="time"
+                    value={formData.returnTime}
+                    onChange={(e) => setFormData(prev => ({ ...prev, returnTime: e.target.value }))}
+                    className="w-[120px]"
+                  />
+                  <Clock className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
+                </div>
+              </div>
             </div>
           </div>
-          
+
+          {/* Number of People */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="adults">Số người lớn</Label>
+              <Input
+                id="adults"
+                name="adults"
+                type="number"
+                min="1"
+                value={formData.adults}
+                onChange={handleNumberChange}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="children">Số trẻ em</Label>
+              <Input
+                id="children"
+                name="children"
+                type="number"
+                min="0"
+                value={formData.children}
+                onChange={handleNumberChange}
+              />
+            </div>
+          </div>
+
+          {/* Car Type */}
+          <div className="space-y-2">
+            <Label htmlFor="carType">Loại xe</Label>
+            <select
+              id="carType"
+              name="carType"
+              value={formData.carType}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="4">Xe 4 chỗ</option>
+              <option value="7">Xe 7 chỗ</option>
+              <option value="16">Xe 16 chỗ</option>
+              <option value="29">Xe 29 chỗ</option>
+              <option value="45">Xe 45 chỗ</option>
+            </select>
+          </div>
+
+          {/* Message Field */}
           <div className="space-y-2">
             <Label htmlFor="message">Đặt xe đi đâu</Label>
             <Textarea 
@@ -297,23 +371,15 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
               rows={3}
             />
           </div>
-          
-          <div className="pt-2 flex justify-end space-x-4">
-            <Button 
-              type="button" 
-              variant="outline" 
-              onClick={onClose}
-            >
-              Cancel
-            </Button>
-            <Button 
-              type="submit" 
-              className="bg-primary hover:bg-primary/90"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Submitting...' : 'Submit Booking'}
-            </Button>
-          </div>
+
+          {/* Submit Button */}
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu'}
+          </Button>
         </form>
       </div>
     </div>
