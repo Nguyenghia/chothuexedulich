@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Calendar, Star, Filter, Search } from 'lucide-react';
@@ -79,6 +78,166 @@ const Tours = () => {
       rating: 4.6,
       category: 'beach'
     },
+    {
+      id: 'tien-giang',
+      name: 'Tiền Giang',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Cangmytho.jpg/800px-Cangmytho.jpg',
+      location: 'Tiền Giang',
+      duration: '2 ngày 1 đêm',
+      price: '1,500,000đ',
+      rating: 4.6,
+      category: 'cultural'
+    },
+    {
+      id: 'ben-tre',
+      name: 'Bến Tre',
+      image: 'https://tinbai.bentre.gov.vn/MediaUploader/2024/03/12/094637/XLCU-LAO-DAT-QUE-TOI.jpg',
+      location: 'Bến Tre',
+      duration: '2 ngày 1 đêm',
+      price: '1,800,000đ',
+      rating: 4.7,
+      category: 'cultural'
+    },
+    {
+      id: 'an-giang',
+      name: 'An Giang',
+      image: 'https://cdn3.ivivu.com/2022/06/du-lich-an-giang-b.jpg',
+      location: 'An Giang',
+      duration: '3 ngày 2 đêm',
+      price: '2,500,000đ',
+      rating: 4.8,
+      category: 'cultural'
+    },
+    {
+      id: 'soc-trang',
+      name: 'Sóc Trăng',
+      image: 'https://scontent.iocvnpt.com/resources/portal/Images/STG/superadminportal.stg/baiviet/chung/soc_trang_tung_buoc_phat_trien_du_lich_cong_dong_1_672276668.jpg',
+      location: 'Sóc Trăng',
+      duration: '2 ngày 1 đêm',
+      price: '2,000,000đ',
+      rating: 4.5,
+      category: 'cultural'
+    },
+    {
+      id: 'ca-mau',
+      name: 'Cà Mau',
+      image: 'https://cdn3.ivivu.com/2022/06/C%C3%A0-Mau.jpg',
+      location: 'Cà Mau',
+      duration: '3 ngày 2 đêm',
+      price: '3,500,000đ',
+      rating: 4.6,
+      category: 'nature'
+    },
+    {
+      id: 'bac-lieu',
+      name: 'Bạc Liêu',
+      image: 'https://www.sunrisehotelbaclieu.com/files/images/bac-lieu-co-gi.jpg',
+      location: 'Bạc Liêu',
+      duration: '2 ngày 1 đêm',
+      price: '2,200,000đ',
+      rating: 4.5,
+      category: 'cultural'
+    },
+    {
+      id: 'rach-gia',
+      name: 'Rạch Giá',
+      image: 'https://static.vinwonders.com/2022/04/rach-gia-co-gi-choi-1-700x435.jpg',
+      location: 'Rạch Giá',
+      duration: '2 ngày 1 đêm',
+      price: '2,300,000đ',
+      rating: 4.4,
+      category: 'beach'
+    },
+    {
+      id: 'ha-tien',
+      name: 'Hà Tiên',
+      image: 'https://cdn3.ivivu.com/2024/05/du-lich-ha-tien-ivivu1-scaled.jpg',
+      location: 'Hà Tiên',
+      duration: '3 ngày 2 đêm',
+      price: '2,800,000đ',
+      rating: 4.7,
+      category: 'beach'
+    },
+    {
+      id: 'chau-doc',
+      name: 'Châu Đốc',
+      image: 'https://tinviettravel.com/uploads/tours/2020_07/tham-quan-mieu-ba-chua-xu.593ac59194ba8ad60822d2a03acdcd6b.jpg',
+      location: 'Châu Đốc',
+      duration: '2 ngày 1 đêm',
+      price: '2,100,000đ',
+      rating: 4.6,
+      category: 'cultural'
+    },
+    {
+      id: 'dong-nai',
+      name: 'Đồng Nai',
+      image: 'https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dong-nai-cover.jpeg',
+      location: 'Đồng Nai',
+      duration: '2 ngày 1 đêm',
+      price: '1,900,000đ',
+      rating: 4.5,
+      category: 'nature'
+    },
+    {
+      id: 'binh-duong',
+      name: 'Bình Dương',
+      image: 'https://file4.batdongsan.com.vn/2021/10/11/PHJN6Zw0/20211011141504-3ca0.jpg',
+      location: 'Bình Dương',
+      duration: '1 ngày',
+      price: '1,200,000đ',
+      rating: 4.4,
+      category: 'cultural'
+    },
+    {
+      id: 'binh-phuoc',
+      name: 'Bình Phước',
+      image: 'https://media.baobinhphuoc.com.vn/upload/news/9_2023/6ec96c9c3ffdeba3b2ec_1_09232626092023.jpg',
+      location: 'Bình Phước',
+      duration: '2 ngày 1 đêm',
+      price: '2,000,000đ',
+      rating: 4.5,
+      category: 'nature'
+    },
+    {
+      id: 'quy-nhon',
+      name: 'Quy Nhơn',
+      image: 'https://benhvienquynhon.gov.vn/wp-content/uploads/2023/05/bai-tam-quy-nhon.jpg',
+      location: 'Quy Nhơn',
+      duration: '3 ngày 2 đêm',
+      price: '4,500,000đ',
+      rating: 4.8,
+      category: 'beach'
+    },
+    {
+      id: 'phu-yen',
+      name: 'Phú Yên',
+      image: 'https://lh7-us.googleusercontent.com/0WETxJcwr3Jyhdav6h8AJEkuEYEMDPziW4X5ZKXUh8BpeFup3_MXiOZ_94wF_x-o-07wZuMVXEtRpmexyrvABpHOT_LtItlZcUTZgnswjuXn1uvlUerBT9af91-1VikCnszdPgnxCUTIbAU4IhIqIxM',
+      location: 'Phú Yên',
+      duration: '3 ngày 2 đêm',
+      price: '4,200,000đ',
+      rating: 4.7,
+      category: 'beach'
+    },
+    {
+      id: 'ninh-thuan',
+      name: 'Ninh Thuận',
+      image: 'https://dulichvietdu.com/wp-content/uploads/2023/08/vinh-vinh-hy-ninh-thuan.jpg',
+      location: 'Ninh Thuận',
+      duration: '2 ngày 1 đêm',
+      price: '3,800,000đ',
+      rating: 4.6,
+      category: 'beach'
+    },
+    {
+      id: 'buon-me-thuot',
+      name: 'Buôn Mê Thuột',
+      image: 'https://longvanlimousine.vn/wp-content/uploads/2024/12/du-lich-buon-ma-thuot.jpg',
+      location: 'Buôn Mê Thuột',
+      duration: '3 ngày 2 đêm',
+      price: '3,500,000đ',
+      rating: 4.7,
+      category: 'mountain'
+    }
   ];
 
   const filteredTours = tours.filter(tour => {
@@ -94,6 +253,7 @@ const Tours = () => {
     { id: 'mountain', name: 'Mountain' },
     { id: 'cultural', name: 'Cultural' },
     { id: 'cruise', name: 'Cruise' },
+    { id: 'nature', name: 'Nature' }
   ];
 
   return (

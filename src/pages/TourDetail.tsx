@@ -30,6 +30,36 @@ const toursData = {
       "Thưởng thức hải sản tươi ngon tại nhà hàng địa phương",
       "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
     ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,200,000đ',
+        description: 'Phù hợp cho chuyến đi ngắn, tham quan các điểm chính của Vũng Tàu'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,500,000đ',
+        description: 'Trải nghiệm đầy đủ Vũng Tàu với đêm nghỉ tại khách sạn'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '3,500,000đ',
+        description: 'Khám phá Vũng Tàu theo nhịp độ thư thái'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '4,500,000đ',
+        description: 'Trải nghiệm trọn vẹn Vũng Tàu và các điểm lân cận'
+      }
+    ],
   },
   'nha-trang': {
     name: 'Nha Trang ',
@@ -49,6 +79,29 @@ const toursData = {
       "Thăm tháp Po Nagar của văn hóa Chăm",
       "Thư giãn tại khu nghỉ dưỡng Tháp Bà và bùn khoáng",
       "Chỗ ở thoải mái với tiện nghi truy cập biển"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '3,500,000đ',
+        description: 'Tour ngắn khám phá Nha Trang'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '5,500,000đ',
+        description: 'Tour tiêu chuẩn khám phá Nha Trang'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '7,500,000đ',
+        description: 'Tour trọn gói trải nghiệm Nha Trang'
+      }
     ],
   },
   'da-lat': {
@@ -70,6 +123,29 @@ const toursData = {
       "Thăm ngôi nhà điên rồ với kiến trúc độc đáo",
       "Đi cáp treo với tầm nhìn toàn cảnh núi rừng"
     ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,800,000đ',
+        description: 'Tour ngắn khám phá Đà Lạt'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,500,000đ',
+        description: 'Tour tiêu chuẩn khám phá Đà Lạt'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '6,500,000đ',
+        description: 'Tour trọn gói trải nghiệm Đà Lạt'
+      }
+    ],
   },
   'mui-ne': {
     name: 'Mũi Né',
@@ -89,6 +165,29 @@ const toursData = {
       "Thưởng thức hải sản tươi ngon tại nhà hàng địa phương",
       "Thăm tháp Chăm Poshanu cổ kính",
       "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,500,000đ',
+        description: 'Tour ngắn khám phá Mũi Né'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,500,000đ',
+        description: 'Tour tiêu chuẩn khám phá Mũi Né'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '3,500,000đ',
+        description: 'Tour trọn gói trải nghiệm Mũi Né'
+      }
     ],
   },
   'can-tho': {
@@ -110,6 +209,29 @@ const toursData = {
       "Thưởng thức ẩm thực địa phương ngon miệng",
       "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
     ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,200,000đ',
+        description: 'Tour chợ nổi Cái Răng'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,200,000đ',
+        description: 'Tour khám phá Cần Thơ'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '3,200,000đ',
+        description: 'Tour trọn gói miền Tây'
+      }
+    ],
   },
   'tay-ninh': {
     name: 'Tây Ninh',
@@ -130,6 +252,589 @@ const toursData = {
       "Thưởng thức ẩm thực địa phương ngon miệng",
       "Phương tiện di chuyển thoải mái từ TP. Hồ Chí Minh"
     ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '900,000đ',
+        description: 'Tour tham quan Tòa Thánh và núi Bà Đen'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '1,800,000đ',
+        description: 'Tour trọn gói Tây Ninh'
+      }
+    ],
+  },
+  'tien-giang': {
+    name: 'Tiền Giang',
+    images: [
+      'https://images.unsplash.com/photo-cai-be-floating-market',
+      'https://images.unsplash.com/photo-vinh-trang-pagoda',
+      'https://images.unsplash.com/photo-dong-thap-muoi',
+    ],
+    location: 'Tiền Giang',
+    price: '1,500,000đ',
+    rating: 4.6,
+    description: "Khám phá vùng đất Tiền Giang với chợ nổi Cái Bè, làng nghề truyền thống và vườn trái cây xanh mát. Tour mang đến trải nghiệm văn hóa sông nước miền Tây độc đáo.",
+    highlights: [
+      "Tham quan chợ nổi Cái Bè sầm uất",
+      "Thưởng thức trái cây tại vườn",
+      "Ghé thăm làng nghề truyền thống",
+      "Viếng chùa Vĩnh Tràng cổ kính",
+      "Trải nghiệm đi đò trong vườn",
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '890,000đ',
+        description: 'Tour ngắn khám phá Tiền Giang'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '1,500,000đ',
+        description: 'Tour trọn gói Tiền Giang'
+      }
+    ],
+  },
+  'ben-tre': {
+    name: 'Bến Tre',
+    images: [
+      'https://images.unsplash.com/photo-coconut-land',
+      'https://images.unsplash.com/photo-ben-tre-river',
+      'https://images.unsplash.com/photo-traditional-craft',
+    ],
+    location: 'Bến Tre',
+    price: '1,800,000đ',
+    rating: 4.7,
+    description: "Bến Tre - xứ dừa với những khu vườn xanh mát, những con sông hiền hòa và làng nghề truyền thống. Tour mang đến trải nghiệm về cuộc sống miền sông nước và văn hóa địa phương.",
+    highlights: [
+      "Tham quan vườn dừa xanh mát",
+      "Trải nghiệm làm kẹo dừa",
+      "Đi thuyền trên sông Bến Tre",
+      "Thăm làng nghề thủ công mỹ nghệ",
+      "Thưởng thức đặc sản địa phương",
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '950,000đ',
+        description: 'Tour ngắn khám phá Bến Tre'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '1,800,000đ',
+        description: 'Tour trọn gói Bến Tre'
+      }
+    ],
+  },
+  'an-giang': {
+    name: 'An Giang',
+    images: [
+      'https://images.unsplash.com/photo-tra-su-forest',
+      'https://images.unsplash.com/photo-cam-mountain',
+      'https://images.unsplash.com/photo-floating-season',
+    ],
+    location: 'An Giang',
+    price: '2,500,000đ',
+    rating: 4.8,
+    description: "An Giang - vùng đất của núi rừng, đồng bằng và di tích văn hóa lịch sử. Tour mang đến trải nghiệm độc đáo về cảnh quan thiên nhiên và văn hóa tâm linh.",
+    highlights: [
+      "Khám phá rừng tràm Trà Sư",
+      "Chinh phục núi Cấm hùng vĩ",
+      "Viếng miếu Bà Chúa Xứ",
+      "Tham quan làng Chăm",
+      "Trải nghiệm mùa nước nổi",
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,500,000đ',
+        description: 'Tour cơ bản An Giang'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '3,500,000đ',
+        description: 'Tour trọn gói An Giang'
+      }
+    ],
+  },
+  'soc-trang': {
+    name: 'Sóc Trăng',
+    images: [
+      'https://images.unsplash.com/photo-clay-pagoda',
+      'https://images.unsplash.com/photo-bat-pagoda',
+      'https://images.unsplash.com/photo-khmer-culture',
+    ],
+    location: 'Sóc Trăng',
+    price: '2,000,000đ',
+    rating: 4.5,
+    description: "Sóc Trăng - vùng đất của văn hóa Khmer với những ngôi chùa cổ kính và ẩm thực đặc sắc. Tour giới thiệu về văn hóa đa dạng và cuộc sống của người dân địa phương.",
+    highlights: [
+      "Tham quan chùa Dơi độc đáo",
+      "Viếng chùa Mã Tộc",
+      "Khám phá văn hóa Khmer",
+      "Thưởng thức ẩm thực địa phương",
+      "Tham quan làng nghề truyền thống",
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,200,000đ',
+        description: 'Tour ngắn Sóc Trăng'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,000,000đ',
+        description: 'Tour trọn gói Sóc Trăng'
+      }
+    ],
+  },
+  'ca-mau': {
+    name: 'Cà Mau',
+    images: [
+      'https://images.unsplash.com/photo-ca-mau-cape',
+      'https://images.unsplash.com/photo-u-minh-forest',
+      'https://images.unsplash.com/photo-dat-mui',
+    ],
+    location: 'Cà Mau',
+    price: '3,500,000đ',
+    rating: 4.6,
+    description: "Khám phá Cà Mau - điểm cực nam của Tổ quốc với hệ sinh thái rừng ngập mặn độc đáo, món ăn đặc sản và văn hóa địa phương đặc sắc.",
+    highlights: [
+      "Tham quan Mũi Cà Mau - cực nam của Tổ quốc",
+      "Khám phá rừng U Minh Hạ",
+      "Trải nghiệm chợ nổi Cà Mau",
+      "Thưởng thức hải sản tươi ngon",
+      "Tham quan làng nghề truyền thống"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '3,500,000đ',
+        description: 'Tour cơ bản khám phá Cà Mau'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,500,000đ',
+        description: 'Tour trọn gói Cà Mau'
+      }
+    ]
+  },
+  'bac-lieu': {
+    name: 'Bạc Liêu',
+    images: [
+      'https://images.unsplash.com/photo-bac-lieu-mansion',
+      'https://images.unsplash.com/photo-cao-van-lau',
+      'https://images.unsplash.com/photo-wind-power'
+    ],
+    location: 'Bạc Liêu',
+    price: '2,200,000đ',
+    rating: 4.5,
+    description: "Bạc Liêu - vùng đất của những công trình kiến trúc độc đáo, âm nhạc đờn ca tài tử và văn hóa ẩm thực đặc sắc của vùng Nam Bộ.",
+    highlights: [
+      "Tham quan Nhà công tử Bạc Liêu",
+      "Viếng chùa Xiêm Cán cổ kính",
+      "Khám phá Khu điện gió Bạc Liêu",
+      "Thưởng thức văn hóa đờn ca tài tử",
+      "Trải nghiệm ẩm thực địa phương"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,500,000đ',
+        description: 'Tour ngắn khám phá Bạc Liêu'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,200,000đ',
+        description: 'Tour trọn gói Bạc Liêu'
+      }
+    ]
+  },
+  'rach-gia': {
+    name: 'Rạch Giá',
+    images: [
+      'https://images.unsplash.com/photo-rach-gia-beach',
+      'https://images.unsplash.com/photo-hon-tre',
+      'https://images.unsplash.com/photo-night-market'
+    ],
+    location: 'Rạch Giá',
+    price: '2,300,000đ',
+    rating: 4.4,
+    description: "Rạch Giá - thành phố biển năng động với bãi biển đẹp, hải sản tươi ngon và là cửa ngõ đến với đảo Phú Quốc.",
+    highlights: [
+      "Tham quan bãi biển Rạch Giá",
+      "Khám phá chợ đêm Rạch Sỏi",
+      "Viếng chùa Tam Bảo",
+      "Thưởng thức hải sản tươi sống",
+      "Du ngoạn đảo Hòn Trẻ"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,800,000đ',
+        description: 'Tour ngắn khám phá Rạch Giá'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,300,000đ',
+        description: 'Tour trọn gói Rạch Giá'
+      }
+    ]
+  },
+  'ha-tien': {
+    name: 'Hà Tiên',
+    images: [
+      'https://images.unsplash.com/photo-ha-tien-beach',
+      'https://images.unsplash.com/photo-thach-dong',
+      'https://images.unsplash.com/photo-mui-nai'
+    ],
+    location: 'Hà Tiên',
+    price: '2,800,000đ',
+    rating: 4.7,
+    description: "Hà Tiên - thành phố biển xinh đẹp với những hang động kỳ bí, đền chùa cổ kính và bãi biển hoang sơ.",
+    highlights: [
+      "Tham quan Thạch Động",
+      "Khám phá Mũi Nai",
+      "Viếng chùa Phù Dung",
+      "Thưởng thức đặc sản địa phương",
+      "Du ngoạn đảo Hải Tặc"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,800,000đ',
+        description: 'Tour cơ bản Hà Tiên'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '3,800,000đ',
+        description: 'Tour trọn gói Hà Tiên'
+      }
+    ]
+  },
+  'chau-doc': {
+    name: 'Châu Đốc',
+    images: [
+      'https://images.unsplash.com/photo-ba-chua-xu',
+      'https://images.unsplash.com/photo-floating-village',
+      'https://images.unsplash.com/photo-tra-su'
+    ],
+    location: 'Châu Đốc',
+    price: '2,100,000đ',
+    rating: 4.6,
+    description: "Châu Đốc - vùng đất của tín ngưỡng, làng nổi và ẩm thực đặc sắc vùng biên giới Tây Nam.",
+    highlights: [
+      "Viếng Miếu Bà Chúa Xứ",
+      "Tham quan làng cá bè",
+      "Khám phá rừng tràm Trà Sư",
+      "Thưởng thức đặc sản mắm Châu Đốc",
+      "Trải nghiệm chợ Châu Đốc"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '1,500,000đ',
+        description: 'Tour ngắn Châu Đốc'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,100,000đ',
+        description: 'Tour trọn gói Châu Đốc'
+      }
+    ]
+  },
+  'dong-nai': {
+    name: 'Đồng Nai',
+    images: [
+      'https://images.unsplash.com/photo-dong-nai-forest',
+      'https://images.unsplash.com/photo-long-thanh',
+      'https://images.unsplash.com/photo-dong-nai-river'
+    ],
+    location: 'Đồng Nai',
+    price: '1,900,000đ',
+    rating: 4.5,
+    description: "Đồng Nai - vùng đất của những khu rừng nguyên sinh, thác nước và di tích lịch sử. Tour mang đến trải nghiệm về thiên nhiên hoang dã và văn hóa địa phương.",
+    highlights: [
+      "Khám phá Vườn Quốc gia Nam Cát Tiên",
+      "Tham quan thác Giang Điền",
+      "Viếng chùa Bửu Phong cổ kính",
+      "Trải nghiệm văn hóa dân tộc bản địa",
+      "Thăm làng nghề truyền thống"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '900,000đ',
+        description: 'Tour ngắn khám phá Đồng Nai'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '1,900,000đ',
+        description: 'Tour trọn gói Đồng Nai'
+      }
+    ]
+  },
+  'binh-duong': {
+    name: 'Bình Dương',
+    images: [
+      'https://images.unsplash.com/photo-dai-nam',
+      'https://images.unsplash.com/photo-hoi-khanh',
+      'https://images.unsplash.com/photo-lac-canh'
+    ],
+    location: 'Bình Dương',
+    price: '1,200,000đ',
+    rating: 4.4,
+    description: "Bình Dương - điểm đến hấp dẫn với khu du lịch Đại Nam, các ngôi chùa cổ kính và làng nghề truyền thống. Tour giới thiệu về văn hóa và lịch sử địa phương.",
+    highlights: [
+      "Khám phá Khu du lịch Đại Nam",
+      "Viếng chùa Hội Khánh",
+      "Tham quan làng gốm Lái Thiêu",
+      "Thăm Bảo tàng Bình Dương",
+      "Trải nghiệm ẩm thực địa phương"
+    ],
+    tourOptions: [
+      {
+        id: 'day-trip',
+        name: 'Tour trong ngày',
+        duration: 'Sáng đi chiều về',
+        price: '800,000đ',
+        description: 'Tour ngắn Bình Dương'
+      },
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '1,200,000đ',
+        description: 'Tour trọn gói Bình Dương'
+      }
+    ]
+  },
+  'binh-phuoc': {
+    name: 'Bình Phước',
+    images: [
+      'https://images.unsplash.com/photo-bu-gia-map',
+      'https://images.unsplash.com/photo-thac-mo',
+      'https://images.unsplash.com/photo-ta-thiet'
+    ],
+    location: 'Bình Phước',
+    price: '2,000,000đ',
+    rating: 4.5,
+    description: "Bình Phước - vùng đất của rừng xanh, thác nước và di tích lịch sử. Tour mang đến trải nghiệm về thiên nhiên hoang dã và văn hóa dân tộc.",
+    highlights: [
+      "Khám phá Vườn Quốc gia Bù Gia Mập",
+      "Tham quan thác Mơ",
+      "Viếng địa đạo Tà Thiết",
+      "Trải nghiệm văn hóa Xtiêng",
+      "Thưởng thức đặc sản địa phương"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '2,000,000đ',
+        description: 'Tour cơ bản Bình Phước'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '2,800,000đ',
+        description: 'Tour trọn gói Bình Phước'
+      }
+    ]
+  },
+  'quy-nhon': {
+    name: 'Quy Nhơn',
+    images: [
+      'https://images.unsplash.com/photo-ky-co',
+      'https://images.unsplash.com/photo-eo-gio',
+      'https://images.unsplash.com/photo-ghenh-rang'
+    ],
+    location: 'Quy Nhơn',
+    price: '4,500,000đ',
+    rating: 4.8,
+    description: "Quy Nhơn - thành phố biển với những bãi biển hoang sơ, tháp Chăm cổ kính và ẩm thực độc đáo. Tour mang đến trải nghiệm về biển đảo và văn hóa Chăm.",
+    highlights: [
+      "Tắm biển Kỳ Co - Eo Gió",
+      "Khám phá Tháp đôi Quy Nhơn",
+      "Thăm Ghềnh Ráng - Tiên Sa",
+      "Trải nghiệm làng chài Nhơn Lý",
+      "Thưởng thức hải sản tươi ngon"
+    ],
+    tourOptions: [
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,500,000đ',
+        description: 'Tour tiêu chuẩn Quy Nhơn'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '5,500,000đ',
+        description: 'Tour trọn gói Quy Nhơn'
+      }
+    ]
+  },
+  'phu-yen': {
+    name: 'Phú Yên',
+    images: [
+      'https://images.unsplash.com/photo-ganh-da-dia',
+      'https://images.unsplash.com/photo-bai-xep',
+      'https://images.unsplash.com/photo-mui-dien'
+    ],
+    location: 'Phú Yên',
+    price: '4,200,000đ',
+    rating: 4.7,
+    description: "Phú Yên - vùng đất của những bãi biển hoang sơ, gành đá độc đáo và văn hóa địa phương đặc sắc. Tour mang đến trải nghiệm về thiên nhiên và cuộc sống miền biển.",
+    highlights: [
+      "Khám phá Gành Đá Đĩa",
+      "Tham quan Bãi Xép",
+      "Chinh phục Mũi Điện - Hải đăng Đại Lãnh",
+      "Thăm đầm Ô Loan",
+      "Thưởng thức hải sản tươi ngon"
+    ],
+    tourOptions: [
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,200,000đ',
+        description: 'Tour cơ bản Phú Yên'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '5,200,000đ',
+        description: 'Tour trọn gói Phú Yên'
+      }
+    ]
+  },
+  'ninh-thuan': {
+    name: 'Ninh Thuận',
+    images: [
+      'https://images.unsplash.com/photo-vinh-hy',
+      'https://images.unsplash.com/photo-po-klong-garai',
+      'https://images.unsplash.com/photo-ninh-chu'
+    ],
+    location: 'Ninh Thuận',
+    price: '3,800,000đ',
+    rating: 4.6,
+    description: "Ninh Thuận - vùng đất của nắng gió, những vườn nho xanh mát và văn hóa Chăm độc đáo. Tour mang đến trải nghiệm về văn hóa và thiên nhiên đặc sắc.",
+    highlights: [
+      "Tham quan Vịnh Vĩnh Hy",
+      "Khám phá Tháp Po Klong Garai",
+      "Trải nghiệm làng gốm Bàu Trúc",
+      "Thăm vườn nho và làm rượu vang",
+      "Tắm biển Ninh Chữ"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '3,800,000đ',
+        description: 'Tour cơ bản Ninh Thuận'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,800,000đ',
+        description: 'Tour trọn gói Ninh Thuận'
+      }
+    ]
+  },
+  'buon-me-thuot': {
+    name: 'Buôn Mê Thuột',
+    images: [
+      'https://images.unsplash.com/photo-coffee-plantation',
+      'https://images.unsplash.com/photo-dray-sap',
+      'https://images.unsplash.com/photo-buon-don'
+    ],
+    location: 'Buôn Mê Thuột',
+    price: '3,500,000đ',
+    rating: 4.7,
+    description: "Buôn Mê Thuột - thủ phủ cà phê với những đồi chè xanh mát, thác nước hùng vĩ và văn hóa Tây Nguyên đặc sắc. Tour mang đến trải nghiệm về văn hóa và thiên nhiên Tây Nguyên.",
+    highlights: [
+      "Tham quan đồi cà phê",
+      "Khám phá thác Dray Sap - Dray Nur",
+      "Trải nghiệm làng đồng bào Ê Đê",
+      "Thăm Buôn Đôn - cưỡi voi",
+      "Thưởng thức cà phê chồn"
+    ],
+    tourOptions: [
+      {
+        id: '2d1n',
+        name: 'Tour 2 ngày 1 đêm',
+        duration: '2 ngày 1 đêm',
+        price: '3,500,000đ',
+        description: 'Tour cơ bản Buôn Mê Thuột'
+      },
+      {
+        id: '3d2n',
+        name: 'Tour 3 ngày 2 đêm',
+        duration: '3 ngày 2 đêm',
+        price: '4,500,000đ',
+        description: 'Tour trọn gói Buôn Mê Thuột'
+      },
+      {
+        id: '4d3n',
+        name: 'Tour 4 ngày 3 đêm',
+        duration: '4 ngày 3 đêm',
+        price: '5,500,000đ',
+        description: 'Tour khám phá trọn vẹn Tây Nguyên'
+      }
+    ]
   },
 };
 
@@ -138,6 +843,7 @@ const TourDetail = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const [selectedTourOption, setSelectedTourOption] = useState(toursData[id as keyof typeof toursData].tourOptions[0].id);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -163,6 +869,9 @@ const TourDetail = () => {
   }
 
   const tour = toursData[id as keyof typeof toursData];
+
+  // Tìm tour option được chọn
+  const currentTourOption = tour.tourOptions.find(option => option.id === selectedTourOption);
 
   return (
     <div className={`min-h-screen flex flex-col ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>
@@ -237,7 +946,7 @@ const TourDetail = () => {
                     </div>
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
-                      {tour.duration}
+                      {currentTourOption.duration}
                     </div>
                     <div className="flex items-center text-yellow-500">
                       <Star className="h-4 w-4 mr-1 fill-yellow-500" />
@@ -334,35 +1043,62 @@ const TourDetail = () => {
               
               <div className="space-y-6">
                 <div className={`bg-primary/5 rounded-xl p-6 space-y-4 ${isLoaded ? 'animate-slide-up' : ''}`} style={{ animationDelay: '150ms' }}>
-                  <h3 className="text-xl font-semibold">Giá chi tiết</h3>
-                  <div className="flex justify-between items-center border-b pb-4">
-                    <span>Bắt đầu từ</span>
-                    <span className="text-2xl font-bold text-primary">{tour.price}</span>
+                  <h3 className="text-xl font-semibold">Lựa chọn tour</h3>
+                  
+                  <div className="space-y-3">
+                    {tour.tourOptions.map((option) => (
+                      <div
+                        key={option.id}
+                        className={`p-4 rounded-lg cursor-pointer transition-all ${
+                          selectedTourOption === option.id
+                            ? 'bg-primary text-white'
+                            : 'bg-white border hover:border-primary'
+                        }`}
+                        onClick={() => setSelectedTourOption(option.id)}
+                      >
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <h4 className="font-medium">{option.name}</h4>
+                            <p className={`text-sm ${selectedTourOption === option.id ? 'text-white/90' : 'text-muted-foreground'}`}>
+                              {option.duration}
+                            </p>
+                          </div>
+                          <span className="text-lg font-bold">{option.price}</span>
+                        </div>
+                        <p className={`text-sm mt-2 ${selectedTourOption === option.id ? 'text-white/90' : 'text-muted-foreground'}`}>
+                          {option.description}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                  <div className="space-y-3 py-2">
-                    <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-primary mr-2" />
-                      <span>{tour.duration}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Users className="h-5 w-5 text-primary mr-2" />
-                      <span>Tối đa 12 du khách</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Car className="h-5 w-5 text-primary mr-2" />
-                      <span>Xe có điều hòa</span>
-                    </div>
-                    <div className="flex items-center">
-                      <List className="h-5 w-5 text-primary mr-2" />
-                      <span>Hành trình có thể tùy chỉnh</span>
+
+                  <div className="border-t pt-4 mt-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center">
+                        <Clock className="h-5 w-5 text-primary mr-2" />
+                        <span>{currentTourOption.duration}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Users className="h-5 w-5 text-primary mr-2" />
+                        <span>Tối đa 12 du khách</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Car className="h-5 w-5 text-primary mr-2" />
+                        <span>Xe có điều hòa</span>
+                      </div>
+                      <div className="flex items-center">
+                        <List className="h-5 w-5 text-primary mr-2" />
+                        <span>Hành trình có thể tùy chỉnh</span>
+                      </div>
                     </div>
                   </div>
+
                   <Button 
                     size="lg" 
                     className="w-full bg-primary hover:bg-primary/90 btn-hover"
                     onClick={() => setShowBookingForm(true)}
                   >
-                    Đặt ngay
+                    Đặt ngay với giá {currentTourOption.price}
                   </Button>
                 </div>
                 
