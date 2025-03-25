@@ -341,6 +341,11 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
                 onChange={handleNumberChange}
               />
             </div>
+            <div className="col-span-2">
+              <p className="text-sm text-gray-600">
+                Tổng số người: {Number(formData.adults) + Number(formData.children)} người
+              </p>
+            </div>
           </div>
 
           {/* Car Type */}
@@ -359,6 +364,16 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
               <option value="29">Xe 29 chỗ</option>
               <option value="45">Xe 45 chỗ</option>
             </select>
+            <div className="flex items-center justify-between mt-2">
+              <p className="text-sm text-gray-600">
+                Số chỗ ngồi: {formData.carType} chỗ
+              </p>
+              {Number(formData.adults) + Number(formData.children) > Number(formData.carType) && (
+                <p className="text-sm text-red-500">
+                  ⚠️ Vượt quá số chỗ cho phép
+                </p>
+              )}
+            </div>
           </div>
 
           {/* Message Field */}
