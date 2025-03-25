@@ -179,6 +179,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
               value={formData.name}
               onChange={handleChange}
               required
+              placeholder="Nhập họ và tên"
             />
           </div>
 
@@ -228,6 +229,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
               value={formData.address}
               onChange={handleChange}
               required
+              placeholder="Nhập địa chỉ đón khách"
             />
           </div>
 
