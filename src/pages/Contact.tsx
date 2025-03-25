@@ -96,7 +96,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium">Địa chỉ văn phòng</h3>
                       <p className="text-muted-foreground">
-                        123 Travel Street, District 1, Ho Chi Minh City, Vietnam
+                        C.C Hoàng Anh Thanh Bình, 2 Đường D4, Phường Tân Hưng, Quận 7, TP.HCM
                       </p>
                     </div>
                   </div>
@@ -107,8 +107,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Số điện thoại</h3>
-                      <p className="text-muted-foreground">+84 123 456 789</p>
-                      <p className="text-muted-foreground">+84 987 654 321</p>
+                      <p className="text-muted-foreground">+84 983 644 335 (Anh Sương)</p>
+                      <p className="text-muted-foreground">+84 909 934 335 (Anh Sương)</p>
                     </div>
                   </div>
                   
@@ -118,8 +118,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Địa chỉ email</h3>
-                      <p className="text-muted-foreground">info@travelwheels.com</p>
-                      <p className="text-muted-foreground">support@travelwheels.com</p>
+                      <p className="text-muted-foreground">ducnghianguyen3004@gmail.com</p>
+                      <p className="text-muted-foreground"></p>
                     </div>
                   </div>
                 </div>
@@ -127,9 +127,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-medium mb-4">Giờ làm việc</h3>
                   <div className="space-y-2 text-muted-foreground">
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 5:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Thứ 2 - Thứ 6: 8:00 AM - 6:00 PM</p>
+                    <p>Thứ 7: 9:00 AM - 5:00 PM</p>
+                    <p>Chủ nhật: Đóng cửa</p>
                   </div>
                 </div>
               </div>
@@ -219,17 +219,23 @@ const Contact = () => {
         
         {/* Map Section */}
         <section className="py-8">
-          <div className="container mx-auto px-6">
-            <div className="bg-gray-100 rounded-lg overflow-hidden h-[400px] animate-slide-up" style={{ animationDelay: '200ms' }}>
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <p className="text-muted-foreground text-center p-6">
-                  Interactive map would be displayed here. <br />
-                  For integration, use Google Maps or similar map services.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+  <div className="container mx-auto px-6">
+    <div className="bg-gray-100 rounded-lg overflow-hidden h-[400px] animate-slide-up" style={{ animationDelay: "200ms" }}>
+      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.8604772499557!2d106.69654307480442!3d10.745234689401613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9a36aab581%3A0x4f97b8b0d5574120!2zQ2h1bmcgY8awIEhvw6BuZyBBbmggVGhhbmggQsOsbmg!5e0!3m2!1svi!2s!4v1742874440009!5m2!1svi!2s"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
       </main>
       
       <Footer />

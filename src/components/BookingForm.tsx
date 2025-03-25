@@ -27,7 +27,7 @@ const EMAILJS_USER_ID = "mAcEmf5rBB_DTaV_H"; // Replace with your EmailJS user I
 const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
-    gender: 'male',
+    gender: 'Nam',
     phone: '',
     address: '',
     departureDate: null as Date | null,
@@ -92,7 +92,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
         // Reset form
         setFormData({
           name: '',
-          gender: 'male',
+          gender: 'Nam',
           phone: '',
           address: '',
           departureDate: null,
@@ -152,12 +152,12 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
                 className="flex space-x-6"
               >
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="male" id="male" />
-                  <Label htmlFor="male">Nam</Label>
+                  <RadioGroupItem value="Nam" id="male" />
+                  <Label htmlFor="Nam">Nam</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="female" id="female" />
-                  <Label htmlFor="female">Nữ</Label>
+                  <RadioGroupItem value="Nữ" id="female" />
+                  <Label htmlFor="Nữ">Nữ</Label>
                 </div>
               </RadioGroup>
             </div>

@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">TravelWheels</h3>
+            <h3 className="text-xl font-bold text-primary">Thuê xe du lịch</h3>
             <p className="text-muted-foreground max-w-xs">
-              Providing premium travel experiences and car rental services for unforgettable journeys.
+              Cung cấp trải nghiệm du lịch cao cấp và dịch vụ cho thuê xe cho những chuyến đi khó quên.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-foreground/70 hover:text-primary transition-colors">
@@ -83,16 +83,16 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-primary mt-0.5" />
                 <span className="text-muted-foreground">
-                  123 Travel Street, District 1, Ho Chi Minh City, Vietnam
+                  C.C Hoàng Anh Thanh Bình, 2 đường D4, Phường Tân Hưng, Quận 7, TP.HCM
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary" />
-                <span className="text-muted-foreground">+84 123 456 789</span>
+                <span className="text-muted-foreground">+84 909 934 335</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary" />
-                <span className="text-muted-foreground">info@travelwheels.com</span>
+                <span className="text-muted-foreground">ducnghianguyen3004@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -100,7 +100,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-100">
           <p className="text-center text-muted-foreground text-sm">
-            © {new Date().getFullYear()} TravelWheels. All rights reserved.
+            © {new Date().getFullYear()} Thuê xe du lịch. All rights reserved.
           </p>
         </div>
       </div>
