@@ -83,8 +83,8 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
     // Send email using EmailJS
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_USER_ID)
       .then((response) => {
-        console.log('Email sent successfully:', response);
-        toast.success('Booking request submitted successfully! We will contact you shortly.');
+        console.log('Gửi email thành công', response);
+        toast.success('Đã gửi yêu cầu đặt chỗ thành công! Chúng tôi sẽ liên hệ với bạn sớm.');
         
         // Close the form
         onClose();
@@ -104,8 +104,8 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
         });
       })
       .catch((error) => {
-        console.error('Email send error:', error);
-        toast.error('Error submitting form. Please try again or contact us directly.');
+        console.error('Lỗi gửi email:', error);
+        toast.error('Có lỗi khi gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ trực tiếp với chúng tôi.');
       })
       .finally(() => {
         setIsSubmitting(false);
@@ -139,7 +139,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
                 name="name" 
                 value={formData.name} 
                 onChange={handleChange} 
-                placeholder="Enter your full name"
+                placeholder="Điền tên của bạn"
                 required
               />
             </div>
@@ -169,7 +169,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
                 name="phone" 
                 value={formData.phone} 
                 onChange={handleChange} 
-                placeholder="Enter your phone number"
+                placeholder="Điền số điện thoại của bạn"
                 required
               />
             </div>
@@ -181,7 +181,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
                 name="address" 
                 value={formData.address} 
                 onChange={handleChange} 
-                placeholder="Enter your address"
+                placeholder="Điền địa chỉ của bạn"
                 required
               />
             </div>
@@ -293,7 +293,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
               name="message" 
               value={formData.message} 
               onChange={handleChange} 
-              placeholder="Any special requirements or questions?"
+              placeholder="Nhập thông tin chi tiết về chuyến đi của bạn"
               rows={3}
             />
           </div>
