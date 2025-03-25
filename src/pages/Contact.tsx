@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -11,7 +10,7 @@ import { MapPin, Phone, Mail, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
+import emailjs from '@emailjs/browser';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -39,21 +38,41 @@ const Contact = () => {
   });
 
   // Form submission handler
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', data);
-      setIsSubmitting(false);
-      
+    try {
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        message: data.message,
+        email: data.email,
+      };
+
+      await emailjs.send(
+        'service_okybtpc', // Thay thế bằng Service ID của bạn
+        'template_frqnaqs', // Thay thế bằng Template ID của bạn
+        templateParams,
+        'mAcEmf5rBB_DTaV_H' // Thay thế bằng Public Key của bạn
+      );
+
       toast({
-        title: "Message Sent",
-        description: "Thank you for your message. We'll get back to you shortly.",
+        title: "Gửi tin nhắn thành công",
+        description: "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể.",
       });
       
       form.reset();
-    }, 1500);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Lỗi",
+        description: "Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại sau.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

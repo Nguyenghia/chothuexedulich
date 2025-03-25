@@ -61,7 +61,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/Tours"
               className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium transition-all hover:bg-primary/90 hover:shadow-md hover:-translate-y-0.5"
             >
               Đặt Ngay
