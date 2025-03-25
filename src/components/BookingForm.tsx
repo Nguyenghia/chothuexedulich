@@ -20,9 +20,9 @@ interface BookingFormProps {
 }
 
 // EmailJS configuration
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
-const EMAILJS_USER_ID = "YOUR_USER_ID"; // Replace with your EmailJS user ID
+const EMAILJS_SERVICE_ID = "service_xfzrb8j"; // Replace with your EmailJS service ID
+const EMAILJS_TEMPLATE_ID = "template_frqnaqs"; // Replace with your EmailJS template ID
+const EMAILJS_USER_ID = "mAcEmf5rBB_DTaV_H"; // Replace with your EmailJS user ID
 
 const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
   const [formData, setFormData] = useState({
