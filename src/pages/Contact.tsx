@@ -114,9 +114,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Địa chỉ văn phòng</h3>
-                      <p className="text-muted-foreground">
+                      <a className="text-muted-foreground" href="https://maps.app.goo.gl/hHZjqkV4w7aVTRNm9" target="_blank">
                         C.C Hoàng Anh Thanh Bình, 2 Đường D4, Phường Tân Hưng, Quận 7, TP.HCM
-                      </p>
+                      </a>
                     </div>
                   </div>
                   
@@ -126,8 +126,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Số điện thoại</h3>
-                      <p className="text-muted-foreground">+84 983 644 335 (Anh Sương)</p>
-                      <p className="text-muted-foreground">+84 909 934 335 (Anh Sương)</p>
+                      <p className="text-muted-foreground">
+                          <a href="tel:+84983644335">+84 983 644 335 (Anh Sương)</a> 
+                      </p>
+                      <p className="text-muted-foreground">
+                          <a href="tel:+84909934335">+84 909 934 335 (Anh Sương)</a> 
+                      </p>
                     </div>
                   </div>
                   
@@ -137,7 +141,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Địa chỉ email</h3>
-                      <p className="text-muted-foreground">ducnghianguyen3004@gmail.com</p>
+                      <p className="text-muted-foreground">
+                        <a href="mailto:ducnghianguyen3004@gmail.com">ducnghianguyen3004@gmail.com</a>
+                      </p>
                       <p className="text-muted-foreground"></p>
                     </div>
                   </div>
