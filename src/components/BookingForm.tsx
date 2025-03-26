@@ -483,7 +483,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
         onClose();
         
         // Reset form
-        setFormData({
+        {/*setFormData({
           name: '',
           gender: 'Nam',
           phone: '',
@@ -499,7 +499,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
           children: 0,
           carType: '4',
           message: ''
-        });
+        });*/}
       })
       .catch((error) => {
         console.error('Lỗi gửi email:', error);

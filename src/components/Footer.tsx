@@ -82,17 +82,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-primary mt-0.5" />
-                <span className="text-muted-foreground">
+                <a className="text-muted-foreground" href="https://maps.app.goo.gl/hHZjqkV4w7aVTRNm9" target="_blank">
                   C.C Hoàng Anh Thanh Bình, 2 đường D4, Phường Tân Hưng, Quận 7, TP.HCM
-                </span>
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary" />
-                <span className="text-muted-foreground">+84 909 934 335</span>
+                <a className="text-muted-foreground" href="tel:+84909934335">+84 909 934 335</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary" />
-                <span className="text-muted-foreground">ducnghianguyen3004@gmail.com</span>
+                <a className="text-muted-foreground" href="mailto:ducnghianguyen3004@gmail.com">
+                  ducnghianguyen3004@gmail.com
+                </a>
               </li>
             </ul>
           </div>
