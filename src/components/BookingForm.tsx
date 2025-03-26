@@ -23,6 +23,314 @@ const EMAILJS_SERVICE_ID = "service_xfzrb8j"; // Replace with your EmailJS servi
 const EMAILJS_TEMPLATE_ID = "template_frqnaqs"; // Replace with your EmailJS template ID
 const EMAILJS_USER_ID = "mAcEmf5rBB_DTaV_H"; // Replace with your EmailJS user ID
 
+// Thêm interface cho formData
+interface FormData {
+  name: string;
+  gender: string;
+  phone: string;
+  address: string;
+  departureDate: Date | null;
+  departureTime: string;
+  returnDate: Date | null;
+  returnTime: string;
+  adults: number;
+  children: number;
+  carType: string;
+  message: string;
+  streetAddress: string;
+  ward: string;
+  district: string;
+  city: string;
+}
+
+// Tạo interface cho dữ liệu địa chỉ
+interface LocationData {
+  [city: string]: {
+    [district: string]: string[];
+  };
+}
+
+// Dữ liệu địa chỉ cho TP.HCM và các tỉnh lân cận
+const locationData: LocationData = {
+  "TP. Hồ Chí Minh": {
+    "Quận 1": [
+      "Phường Bến Nghé",
+      "Phường Bến Thành",
+      "Phường Cầu Kho",
+      "Phường Cầu Ông Lãnh",
+      "Phường Cô Giang",
+      "Phường Đa Kao",
+      "Phường Nguyễn Cư Trinh",
+      "Phường Nguyễn Thái Bình",
+      "Phường Phạm Ngũ Lão",
+      "Phường Tân Định"
+    ],
+    "Quận 2": [
+      "Phường An Khánh",
+      "Phường An Lợi Đông",
+      "Phường An Phú",
+      "Phường Bình An",
+      "Phường Bình Khánh",
+      "Phường Bình Trưng Đông",
+      "Phường Bình Trưng Tây",
+      "Phường Cát Lái",
+      "Phường Thạnh Mỹ Lợi",
+      "Phường Thảo Điền"
+    ],
+    "Quận 3": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14"
+    ],
+    "Quận 4": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 6", "Phường 8", "Phường 9", "Phường 10",
+      "Phường 13", "Phường 14", "Phường 15", "Phường 16",
+      "Phường 18"
+    ],
+    "Quận 5": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15"
+    ],
+    "Quận 6": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14"
+    ],
+    "Quận 7": [
+      "Phường Tân Thuận Đông",
+      "Phường Tân Thuận Tây",
+      "Phường Tân Kiểng",
+      "Phường Tân Hưng",
+      "Phường Bình Thuận",
+      "Phường Tân Quy",
+      "Phường Phú Thuận",
+      "Phường Tân Phú",
+      "Phường Tân Phong",
+      "Phường Phú Mỹ"
+    ],
+    "Quận 8": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15", "Phường 16"
+    ],
+    "Quận 9": [
+      "Phường Long Bình",
+      "Phường Long Thạnh Mỹ",
+      "Phường Tân Phú",
+      "Phường Hiệp Phú",
+      "Phường Tăng Nhơn Phú A",
+      "Phường Tăng Nhơn Phú B",
+      "Phường Phước Long A",
+      "Phường Phước Long B",
+      "Phường Trường Thạnh",
+      "Phường Long Phước",
+      "Phường Long Trường",
+      "Phường Phú Hữu"
+    ],
+    "Quận 10": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15"
+    ],
+    "Quận 11": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15", "Phường 16"
+    ],
+    "Quận 12": [
+      "Phường Thạnh Xuân",
+      "Phường Thạnh Lộc",
+      "Phường Hiệp Thành",
+      "Phường Thới An",
+      "Phường Tân Chánh Hiệp",
+      "Phường An Phú Đông",
+      "Phường Tân Thới Hiệp",
+      "Phường Trung Mỹ Tây",
+      "Phường Tân Hưng Thuận",
+      "Phường Đông Hưng Thuận",
+      "Phường Tân Thới Nhất"
+    ],
+    "Quận Tân Bình": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 6", "Phường 7", "Phường 8",
+      "Phường 9", "Phường 10", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15"
+    ],
+    "Quận Tân Phú": [
+      "Phường Tân Sơn Nhì",
+      "Phường Tây Thạnh",
+      "Phường Sơn Kỳ",
+      "Phường Tân Quý",
+      "Phường Tân Thành",
+      "Phường Phú Thọ Hoà",
+      "Phường Phú Thạnh",
+      "Phường Phú Trung",
+      "Phường Hoà Thạnh",
+      "Phường Hiệp Tân",
+      "Phường Tân Thới Hoà"
+    ],
+    "Quận Bình Thạnh": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 5",
+      "Phường 6", "Phường 7", "Phường 11", "Phường 12",
+      "Phường 13", "Phường 14", "Phường 15", "Phường 17",
+      "Phường 19", "Phường 21", "Phường 22", "Phường 24",
+      "Phường 25", "Phường 26", "Phường 27", "Phường 28"
+    ],
+    "Quận Gò Vấp": [
+      "Phường 1", "Phường 3", "Phường 4", "Phường 5",
+      "Phường 6", "Phường 7", "Phường 8", "Phường 9",
+      "Phường 10", "Phường 11", "Phường 12", "Phường 13",
+      "Phường 14", "Phường 15", "Phường 16", "Phường 17"
+    ],
+    "Quận Phú Nhuận": [
+      "Phường 1", "Phường 2", "Phường 3", "Phường 4",
+      "Phường 5", "Phường 7", "Phường 8", "Phường 9",
+      "Phường 10", "Phường 11", "Phường 13", "Phường 15",
+      "Phường 17"
+    ],
+    "Quận Bình Tân": [
+      "Phường Bình Hưng Hoà",
+      "Phường Bình Hưng Hoà A",
+      "Phường Bình Hưng Hoà B",
+      "Phường Bình Trị Đông",
+      "Phường Bình Trị Đông A",
+      "Phường Bình Trị Đông B",
+      "Phường Tân Tạo",
+      "Phường Tân Tạo A",
+      "Phường An Lạc",
+      "Phường An Lạc A"
+    ],
+    "Huyện Nhà Bè": [
+      "Thị trấn Nhà Bè",
+      "Xã Phước Kiển",
+      "Xã Phước Lộc",
+      "Xã Nhơn Đức",
+      "Xã Phú Xuân",
+      "Xã Long Thới",
+      "Xã Hiệp Phước"
+    ],
+    "Huyện Bình Chánh": [
+      "Thị trấn Tân Túc",
+      "Xã Phạm Văn Hai",
+      "Xã Vĩnh Lộc A",
+      "Xã Vĩnh Lộc B",
+      "Xã Bình Lợi",
+      "Xã Lê Minh Xuân",
+      "Xã Tân Nhựt",
+      "Xã Tân Kiên",
+      "Xã Bình Hưng",
+      "Xã Phong Phú",
+      "Xã An Phú Tây",
+      "Xã Hưng Long",
+      "Xã Đa Phước",
+      "Xã Tân Quý Tây",
+      "Xã Bình Chánh",
+      "Xã Quy Đức"
+    ],
+    "Huyện Hóc Môn":[
+    "Bà Điểm", "Đông Thạnh", "Hóc Môn (thị trấn)", "Nhị Bình", "Tân Hiệp", "Tân Thới Nhì", "Tân Xuân", 
+    "Thới Tam Thôn", "Trung Chánh", "Xuân Thới Đông", "Xuân Thới Sơn", "Xuân Thới Thượng"
+    ],
+    "Huyện Củ Chi":[
+      "Thị trấn Củ Chi", "Xã Phú Mỹ Hưng", "Xã An Phú", "Xã Trung Lập Thượng", "Xã An Nhơn Tây",
+      "Xã Nhuận Đức", "Xã Phạm Văn Cội", "Xã Phú Hòa Đông", "Xã Trung Lập Hạ", "Xã Trung An", 
+      "Xã Phước Thạnh", "Xã Phước Hiệp", "Xã Tân An Hội", "Xã Phước Vĩnh An", "Xã Thái Mỹ", 
+      "Xã Tân Thạnh Tây", "Xã Hòa Phú", "Xã Tân Thạnh Đông", "Xã Bình Mỹ", "Xã Tân Phú Trung", "Xã Tân Thông Hội"
+    ],
+    "Huyện Cần Giờ":[
+      "Thị trấn Cần Thạnh", "Xã An Thới Đông", "Xã Bình Khánh" ,
+      "Xã Long Hòa", "Xã Lý Nhơn", "Xã Tam Thôn Hiệp", "Xã Thạnh An"
+    ],
+    "TP. Thủ Đức": [
+      "Phường Hiệp Bình Chánh",
+      "Phường Hiệp Bình Phước",
+      "Phường Linh Chiểu",
+      "Phường Linh Tây",
+      "Phường Linh Đông",
+      "Phường Bình Chiểu",
+      "Phường Bình Thọ",
+      "Phường Trường Thọ",
+      "Phường Long Bình",
+      "Phường Long Thạnh Mỹ",
+      "Phường Tân Phú",
+      "Phường Hiệp Phú",
+      "Phường Tăng Nhơn Phú A",
+      "Phường Tăng Nhơn Phú B",
+      "Phường Phước Long A",
+      "Phường Phước Long B"
+    ]
+  },
+  "Bình Dương": {
+    "TP. Thủ Dầu Một": [
+      "Phường Phú Cường",
+      "Phường Phú Hòa",
+      "Phường Phú Lợi",
+      "Phường Phú Thọ",
+      "Phường Chánh Nghĩa",
+      "Phường Định Hòa"
+    ],
+    "TP. Dĩ An": [
+      "Phường Dĩ An",
+      "Phường Tân Bình",
+      "Phường Tân Đông Hiệp",
+      "Phường Bình An",
+      "Phường Bình Thắng"
+    ]
+  },
+  "Đồng Nai": {
+    "TP. Biên Hòa": [
+      "Phường Trảng Dài",
+      "Phường Tân Phong",
+      "Phường Tân Biên",
+      "Phường Hố Nai",
+      "Phường Tân Hòa",
+      "Phường Tân Hiệp"
+    ],
+    "TP. Long Khánh": [
+      "Phường Xuân An",
+      "Phường Xuân Hoà",
+      "Phường Phú Bình",
+      "Phường Bình Lộc",
+      "Phường Bảo Vinh"
+    ]
+  },
+  "Long An": {
+    "TP. Tân An": [
+      "Phường 1",
+      "Phường 2",
+      "Phường 3",
+      "Phường 4",
+      "Phường 5",
+      "Phường 6",
+      "Phường 7"
+    ],
+    "Huyện Bến Lức": [
+      "Thị trấn Bến Lức",
+      "Xã Thạnh Lợi",
+      "Xã Lương Bình",
+      "Xã Thạnh Hòa"
+    ]
+  },
+  "Tây Ninh": {
+    "TP. Tây Ninh": [
+      "Phường 1",
+      "Phường 2",
+      "Phường 3",
+      "Phường 4",
+      "Phường Hiệp Ninh",
+      "Phường Ninh Sơn"
+    ]
+  }
+};
+
 const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -36,9 +344,47 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
     adults: 1,
     children: 0,
     carType: '4',
-    message: ''
+    message: '',
+    streetAddress: '',
+    ward: '',
+    district: '',
+    city: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Lấy danh sách thành phố
+  const cities = Object.keys(locationData);
+
+  // Lấy danh sách quận/huyện dựa trên thành phố đã chọn
+  const getDistricts = (city: string) => {
+    return city ? Object.keys(locationData[city]) : [];
+  };
+
+  // Lấy danh sách phường/xã dựa trên thành phố và quận/huyện đã chọn
+  const getWards = (city: string, district: string) => {
+    return city && district ? locationData[city][district] : [];
+  };
+
+  // Xử lý khi thay đổi thành phố
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCity = e.target.value;
+    setFormData(prev => ({
+      ...prev,
+      city: newCity,
+      district: '',
+      ward: ''
+    }));
+  };
+
+  // Xử lý khi thay đổi quận/huyện
+  const handleDistrictChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newDistrict = e.target.value;
+    setFormData(prev => ({
+      ...prev,
+      district: newDistrict,
+      ward: ''
+    }));
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -84,7 +430,7 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
     e.preventDefault();
     
     // Validate form
-    if (!formData.name || !formData.phone || !formData.address || !formData.departureDate || !formData.returnDate) {
+    if (!formData.name || !formData.phone || !formData.streetAddress || !formData.ward || !formData.district || !formData.city || !formData.departureDate || !formData.returnDate) {
       toast.error('Vui lòng điền đầy đủ thông tin');
       return;
     }
@@ -103,20 +449,27 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
 
     setIsSubmitting(true);
 
+    // Tạo địa chỉ đầy đủ
+    const fullAddress = `${formData.streetAddress}, ${formData.ward}, ${formData.district}, ${formData.city}`;
+
     // Prepare the template parameters
     const templateParams = {
       from_name: formData.name,
       tour_name: tourName || 'Custom Tour',
       gender: formData.gender,
       phone: formData.phone,
-      address: formData.address,
+      street_address: formData.streetAddress,
+      ward: formData.ward,
+      district: formData.district,
+      city: formData.city,
+      full_address: fullAddress,
       departure_date: formatDate(formData.departureDate),
       departure_time: formData.departureTime,
       return_date: formatDate(formData.returnDate),
       return_time: formData.returnTime,
       adults: formData.adults,
       children: formData.children,
-      car_type: formData.carType,
+      car_type: `Xe ${formData.carType} chỗ`,
       message: formData.message,
     };
 
@@ -134,7 +487,10 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
           name: '',
           gender: 'Nam',
           phone: '',
-          address: '',
+          streetAddress: '',
+          ward: '',
+          district: '',
+          city: '',
           departureDate: null,
           departureTime: '08:00',
           returnDate: null,
@@ -221,16 +577,73 @@ const BookingForm = ({ tourName = '', isOpen, onClose }: BookingFormProps) => {
           </div>
 
           {/* Address Field */}
-          <div className="space-y-2">
-            <Label htmlFor="address">Địa chỉ *</Label>
-            <Input
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              required
-              placeholder="Nhập địa chỉ đón khách"
-            />
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="streetAddress">Số nhà, Đường *</Label>
+              <Input
+                id="streetAddress"
+                name="streetAddress"
+                value={formData.streetAddress}
+                onChange={handleChange}
+                required
+                placeholder="Nhập số nhà, tên đường"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="city">Tỉnh/Thành phố *</Label>
+                <select
+                  id="city"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleCityChange}
+                  className="w-full p-2 border rounded-md"
+                  required
+                >
+                  <option value="">Chọn Tỉnh/Thành phố</option>
+                  {cities.map(city => (
+                    <option key={city} value={city}>{city}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="district">Quận/Huyện *</Label>
+                <select
+                  id="district"
+                  name="district"
+                  value={formData.district}
+                  onChange={handleDistrictChange}
+                  className="w-full p-2 border rounded-md"
+                  required
+                  disabled={!formData.city}
+                >
+                  <option value="">Chọn Quận/Huyện</option>
+                  {getDistricts(formData.city).map(district => (
+                    <option key={district} value={district}>{district}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="ward">Phường/Xã *</Label>
+                <select
+                  id="ward"
+                  name="ward"
+                  value={formData.ward}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded-md"
+                  required
+                  disabled={!formData.district}
+                >
+                  <option value="">Chọn Phường/Xã</option>
+                  {getWards(formData.city, formData.district).map(ward => (
+                    <option key={ward} value={ward}>{ward}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
           </div>
 
           {/* Date and Time Fields */}

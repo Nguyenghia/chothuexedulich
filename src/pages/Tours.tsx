@@ -237,6 +237,26 @@ const Tours = () => {
       price: '3,500,000đ',
       rating: 4.7,
       category: 'mountain'
+    },
+    {
+      id: 'can-gio',
+      name: 'Cần Giờ',
+      image: 'https://cdn.tgdd.vn/Files/2021/06/25/1363055/kinh-nghiem-du-lich-can-gio-1-ngay-tu-tuc-202206111503139438.jpg',
+      location: 'Cần Giờ',
+      duration: '1 ngày',
+      price: '1,500,000đ',
+      rating: 4.6,
+      category: 'nature'
+    },
+    {
+      id: 'cu-chi',
+      name: 'Củ Chi',
+      image: 'https://www.vietnamonline.com/media/uploads/froala_editor/images/VNO_Cu_Chi_Tunnels.jpg',
+      location: 'Củ Chi',
+      duration: '1 ngày',
+      price: '1,200,000đ',
+      rating: 4.7,
+      category: 'cultural'
     }
   ];
 
