@@ -55,7 +55,7 @@ const Tours = () => {
       duration: '2 ngày 1 đêm',
       price: '2,500,000đ',
       rating: 4.6,
-      category: 'cultural'
+      category: 'cruise'
     },
     
     {
@@ -86,7 +86,7 @@ const Tours = () => {
       duration: '2 ngày 1 đêm',
       price: '1,500,000đ',
       rating: 4.6,
-      category: 'cultural'
+      category: 'cruise'
     },
     {
       id: 'ben-tre',
@@ -96,7 +96,7 @@ const Tours = () => {
       duration: '2 ngày 1 đêm',
       price: '1,800,000đ',
       rating: 4.7,
-      category: 'cultural'
+      category: 'cruise'
     },
     {
       id: 'an-giang',
@@ -106,7 +106,7 @@ const Tours = () => {
       duration: '3 ngày 2 đêm',
       price: '2,500,000đ',
       rating: 4.8,
-      category: 'cultural'
+      category: 'cruise'
     },
     {
       id: 'soc-trang',
@@ -248,12 +248,12 @@ const Tours = () => {
   });
 
   const categories = [
-    { id: 'all', name: 'All Tours' },
-    { id: 'beach', name: 'Beach' },
-    { id: 'mountain', name: 'Mountain' },
-    { id: 'cultural', name: 'Cultural' },
-    { id: 'cruise', name: 'Cruise' },
-    { id: 'nature', name: 'Nature' }
+    { id: 'all', name: 'Tất cả các tours' },
+    { id: 'beach', name: 'Biển' },
+    { id: 'mountain', name: 'Tây Nguyên' },
+    { id: 'cultural', name: 'Văn hóa – Lịch sử' },
+    { id: 'cruise', name: 'Sông Nước' },
+    { id: 'nature', name: 'Sinh Thái' }
   ];
 
   return (
@@ -275,7 +275,7 @@ const Tours = () => {
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input 
-                  placeholder="Search tours..."
+                  placeholder="Tìm kiếm..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-9"
