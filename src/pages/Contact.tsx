@@ -172,7 +172,7 @@ const Contact = () => {
                         <FormItem>
                           <FormLabel>Tên</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your name" {...field} />
+                            <Input placeholder="Nhập tên của bạn" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -187,7 +187,7 @@ const Contact = () => {
                           <FormItem>
                             <FormLabel>Địa chỉ email</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter your email" {...field} />
+                              <Input placeholder="Nhập email của bạn" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -201,7 +201,7 @@ const Contact = () => {
                           <FormItem>
                             <FormLabel>Số điện thoại</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter your phone number" {...field} />
+                              <Input placeholder="Nhập số điện thoại của bạn" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -217,7 +217,7 @@ const Contact = () => {
                           <FormLabel>Đặt xe đi đâu</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Please write your message here..." 
+                              placeholder="Nhập nội dung tin nhắn của bạn.." 
                               className="min-h-[120px]"
                               {...field} 
                             />

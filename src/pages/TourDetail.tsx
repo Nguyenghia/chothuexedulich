@@ -959,9 +959,9 @@ const TourDetail = () => {
                 
                 <Tabs defaultValue="highlights" className={`${isLoaded ? 'animate-slide-up' : ''}`} style={{ animationDelay: '100ms' }}>
                   <TabsList className="grid grid-cols-3 mb-6">
-                    <TabsTrigger value="highlights">Highlights</TabsTrigger>
-                    <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
-                    <TabsTrigger value="details">Details</TabsTrigger>
+                    <TabsTrigger value="highlights">Nổi bật</TabsTrigger>
+                    <TabsTrigger value="itinerary">Lịch trình</TabsTrigger>
+                    <TabsTrigger value="details">Chi tiết</TabsTrigger>
                   </TabsList>
                   
                   <TabsContent value="highlights" className="space-y-4">
@@ -987,53 +987,53 @@ const TourDetail = () => {
                         <ul className="space-y-2">
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>Professional English-speaking guide</span>
+                            <span>Tài xế chuyên nghiệp, nhiều kinh nghiệm</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>Accommodation as listed in the itinerary</span>
+                            <span>Xe đời mới, hiện đại, đầy đủ tiện nghi (máy lạnh, ghế ngả, wifi…)</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>Meals as mentioned in the itinerary</span>
+                            <span>Nhiên liệu và phí cầu đường trong suốt hành trình</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>Transportation in air-conditioned vehicles</span>
+                            <span> Bảo hiểm hành khách theo quy định</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>All entrance fees as mentioned in the itinerary</span>
+                            <span>Đưa đón tận nơi theo yêu cầu (tại nhà, sân bay, bến xe, khách sạn…)</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                            <span>Bottled water during tours</span>
+                            <span>Hỗ trợ hành lý và tư vấn lộ trình tối ưu</span>
                           </li>
                         </ul>
                       </div>
                       
                       <div className="space-y-4">
-                        <h4 className="text-lg font-medium">Not Included</h4>
+                        <h4 className="text-lg font-medium">Không bao gồm</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start">
                             <span className="text-red-500 font-bold mr-2">×</span>
-                            <span>International and domestic flights</span>
+                            <span>Chi phí ăn uống, nghỉ ngơi của tài xế nếu thuê dài ngày</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-red-500 font-bold mr-2">×</span>
-                            <span>Travel insurance</span>
+                            <span>Vé tham quan tại các điểm đến (nếu có)</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-red-500 font-bold mr-2">×</span>
-                            <span>Personal expenses (laundry, telephone, drinks, etc.)</span>
+                            <span>Chi phí phát sinh ngoài hợp đồng (nếu có)</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-red-500 font-bold mr-2">×</span>
-                            <span>Tips for guides and drivers</span>
+                            <span>Thuế VAT (nếu có yêu cầu xuất hóa đơn)</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-red-500 font-bold mr-2">×</span>
-                            <span>Any other items not mentioned as included</span>
+                            <span>Tiền tip cho tài xế (tùy ý khách hàng)</span>
                           </li>
                         </ul>
                       </div>
@@ -1111,8 +1111,8 @@ const TourDetail = () => {
                       <Link to="/contact">Liên lạc với chúng tôi</Link>
                     </Button>
                     <p className="text-center text-sm text-muted-foreground">Hoặc gọi</p>
-                    <a href="tel:+84123456789" className="flex items-center justify-center text-primary font-medium">
-                      +84 123 456 789
+                    <a href="tel:+84909924335" className="flex items-center justify-center text-primary font-medium">
+                      +84 909 924 335
                     </a>
                   </div>
                 </div>
